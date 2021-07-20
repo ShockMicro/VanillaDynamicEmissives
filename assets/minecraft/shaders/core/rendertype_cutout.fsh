@@ -21,7 +21,7 @@ out vec4 fragColor;
 void main() {
     vec4 color = texture(Sampler0, texCoord0) * vertexColor * ColorModulator;
 	float alpha = color.a * 255.0;
-	color = make_emissive(color, lightColor, alpha);
+	color = make_emissive(color, lightColor, vertexDistance, alpha);
 	color.a = remap_alpha(alpha) / 255.0;
     if (color.a < 0.1) {
         discard;
