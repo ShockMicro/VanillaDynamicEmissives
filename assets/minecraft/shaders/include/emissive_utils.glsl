@@ -9,12 +9,12 @@ float checkTranslucency(float textureTranslucency, float targetTranslucency) {
 
 vec4 makeEmissive(vec4 inputColor, vec4 lightColor, float inputTranslucency) {
 	if (checkTranslucency(inputTranslucency, 252.0) == 1.0) return inputColor;
-	else if (checkTranslucency(inputTranslucency, 251.0) == 1.0) return inputColor; //copypaste this and change the number to add a custom translucency
+	else if (checkTranslucency(inputTranslucency, 251.0) == 1.0) return inputColor; //copypaste this and change the number to add a custom alpha value
 	else return inputColor * lightColor;
 }
 
 float translucencyMap(float inputTranslucency) {
 	if (checkTranslucency(inputTranslucency, 252.0) == 1.0) return 255.0;
-	else if (checkTranslucency(inputTranslucency, 251.0) == 1.0) return 190.0; //copypaste this and change the numbers to add a custom translucency
+	else if (checkTranslucency(inputTranslucency, 251.0) == 1.0) return 190.0; //copypaste this and change the numbers to add a custom alpha value
 	else return inputTranslucency;
 }
