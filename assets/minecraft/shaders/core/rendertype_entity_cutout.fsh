@@ -1,7 +1,7 @@
 #version 150
 
 #moj_import <fog.glsl>
-#moj_import <emissive_utils.glsl>
+#moj_import <light.glsl>
 
 uniform sampler2D Sampler0;
 
@@ -26,8 +26,8 @@ void main() {
     }
     color *= vertexColor * ColorModulator;
     color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
-	float translucency = color.a * 255.0;
-    color = makeEmissive(color, lightColor, translucency);
-	color.a = translucencyMap(translucency) / 255.0;
+	float alpha = color.a * 255.0;
+    color = make_emissive(color, lightColor, alpha);
+	color.a = remap_alpha(alpha) / 255.0;
     fragColor = linear_fog(color, vertexDistance, FogStart, FogEnd, FogColor);
 }
