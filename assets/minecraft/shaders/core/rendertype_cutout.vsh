@@ -17,6 +17,7 @@ uniform vec3 ChunkOffset;
 out float vertexDistance;
 out vec4 vertexColor;
 out vec4 lightColor;
+out vec4 maxLightColor;
 out vec2 texCoord0;
 out vec4 normal;
 
@@ -26,6 +27,7 @@ void main() {
     vertexDistance = length((ModelViewMat * vec4(Position + ChunkOffset, 1.0)).xyz);
     vertexColor = Color;
 	lightColor = minecraft_sample_lightmap(Sampler2, UV2);
+	maxLightColor = minecraft_sample_lightmap(Sampler2, ivec2(240.0, 240.0));
     texCoord0 = UV0;
     normal = ProjMat * ModelViewMat * vec4(Normal, 0.0);
 }

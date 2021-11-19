@@ -13,6 +13,7 @@ uniform vec4 FogColor;
 in float vertexDistance;
 in vec4 vertexColor;
 in vec4 lightColor;
+in vec4 maxLightColor;
 in vec4 overlayColor;
 in vec2 texCoord0;
 in vec4 normal;
@@ -23,7 +24,7 @@ void main() {
     vec4 color = texture(Sampler0, texCoord0) * vertexColor * ColorModulator;
     color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
 	float alpha = color.a * 255.0;
-    color = make_emissive(color, lightColor, vertexDistance, alpha);
+    color = make_emissive(color, lightColor, maxLightColor, vertexDistance, alpha);
 	color.a = remap_alpha(alpha) / 255.0;
     fragColor = linear_fog(color, vertexDistance, FogStart, FogEnd, FogColor);
 }

@@ -7,7 +7,7 @@ float check_alpha(float textureAlpha, float targetAlpha) {
 	else return 0.0;
 }
 
-vec4 make_emissive(vec4 inputColor, vec4 lightColor, float vertexDistance, float inputAlpha) {
+vec4 make_emissive(vec4 inputColor, vec4 lightColor, vec4 maxLightColor, float vertexDistance, float inputAlpha) {
 	if (vertexDistance > 800) return inputColor;
 	if (check_alpha(inputAlpha, 252.0) == 1.0) return inputColor; // Default case, checks for alpha 252 and just returns the input color if it is.
 	else if (check_alpha(inputAlpha, 251.0) == 1.0) return inputColor; // Copypaste this and change the number to add a custom alpha value.
