@@ -65,7 +65,7 @@ vec4 get_block_face_lighting(vec3 normal, float dimension) {
 
 bool face_lighting_check(int inputAlpha) {
 
-    if (inputAlpha == 250) return false; // Checks for alpha 250, and returns that this face should not be lit. Used in the example pack for lime concrete.
+    if (inputAlpha == 252) return false; // Checks for alpha 252, and returns that this face should not be lit. Used in the example pack for redstone ore and the zombie's eyes.
 
     return true; // A face should be lit by default
 }
