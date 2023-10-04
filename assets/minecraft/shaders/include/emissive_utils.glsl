@@ -66,6 +66,7 @@ vec4 get_block_face_lighting(vec3 normal, float dimension) {
 bool face_lighting_check(int inputAlpha) {
 
     if (inputAlpha == 252) return false; // Checks for alpha 252, and returns that this face should not be lit. Used in the example pack for redstone ore and the zombie's eyes.
+    if (inputAlpha == 250) return false; // Used in the example pack for lime concrete.
 
     return true; // A face should be lit by default
 }
@@ -92,7 +93,6 @@ vec4 make_emissive(vec4 inputColor, vec4 lightColor, vec4 faceLightColor, int in
 
     if (inputAlpha == 252) return inputColor; // Checks for alpha 252 and just returns the input color if it is. Used in the example pack for redstone ore and the zombie's eyes.
     if (inputAlpha == 251) return apply_partial_emissivity(inputColor, lightColor, vec3(0.411, 0.345, 0.388)); // Used in the example pack for ice.
-    if (inputAlpha == 250) return inputColor; // You can copy & this line and change the function to add a new emissive type. Used in the example pack for lime concrete. 
     
     return inputColor * lightColor; // If none of the pixels are supposed to be emissive, then it adds the light.
 }
