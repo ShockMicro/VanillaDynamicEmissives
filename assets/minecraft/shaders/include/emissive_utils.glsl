@@ -87,7 +87,7 @@ float remap_alpha(int inputAlpha) {
 
 vec4 make_emissive(vec4 inputColor, vec4 lightColor, vec4 faceLightColor, int inputAlpha) {
 
-    if(face_lighting_check(inputAlpha)) lightColor *= faceLightColor; // Applies the face lighting if the face should be lit
+    if(face_lighting_check(inputAlpha)) inputColor *= faceLightColor; // Applies the face lighting if the face should be lit
     inputColor.a = remap_alpha(inputAlpha) / 255.0; // Remap the alpha value
 
     if (inputAlpha == 252) return inputColor; // Checks for alpha 252 and just returns the input color if it is. Used in the example pack for redstone ore and the zombie's eyes.
