@@ -80,7 +80,8 @@ float remap_alpha(int inputAlpha) {
     if (inputAlpha == 251) return 190.0; // You can copy & paste this line and change the values to make any transparent block work with this pack. Used in the example pack for ice.
     if (inputAlpha == 250) return 255.0; // Used in the example pack for lime concrete.
     
-    return inputAlpha; // If a pixel doesn't need to have its alpha changed then it simply does not change.
+    float floatAlpha = float(inputAlpha);
+    return floatAlpha; // If a pixel doesn't need to have its alpha changed then it simply does not change.
 }
 
 
