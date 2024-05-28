@@ -11,4 +11,4 @@ Translucent textures require a bit more work. Check the example for ice to get a
 `return inputColor * lightColor;` means you're simply returning the texture with its proper lighting. This is the default case.
 
 ### NOTICE
-This pack probably won't work with Optifine! If it does, good for you! This pack is supposed to be installed in the RESOURCE PACKS folder, using vanilla Minecraft on 1.20.2, because it is a RESOURCE PACK. If there's still a bug after doing everything correctly, report it in the issues tab at https://github.com/ShockMicro/VanillaDynamicEmissives/issues.
+This pack probably won't work with Optifine! If it does, good for you! This pack is supposed to be installed in the RESOURCE PACKS folder, using vanilla Minecraft on 1.20.6, because it is a RESOURCE PACK. If there's still a bug after doing everything correctly, report it in the issues tab at https://github.com/ShockMicro/VanillaDynamicEmissives/issues.
