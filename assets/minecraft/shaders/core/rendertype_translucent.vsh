@@ -22,7 +22,6 @@ out vec4 vertexColor;
 out vec4 lightColor;
 out vec4 faceLightColor;
 out vec2 texCoord0;
-out vec4 normal;
 
 void main() {
     vec3 pos = Position + ChunkOffset;
@@ -33,5 +32,4 @@ void main() {
     faceLightColor = get_block_face_lighting(Normal, get_dimension(minecraft_sample_lightmap(Sampler2, ivec2(0.0, 0.0))));
     vertexColor = Color / faceLightColor;
     texCoord0 = UV0;
-    normal = ProjMat * ModelViewMat * vec4(Normal, 0.0);
 }
